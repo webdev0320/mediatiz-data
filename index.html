@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1">
+    <title>The Story of Technology</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Variable:opsz,wght@8..72,400&display=swap" rel="stylesheet">
+    <style>
+        /* Black background for entire body */
+       html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+body {
+    display: block; /* Allow stacking */
+    overflow-x: hidden !important;
+    all: unset;
+    font-family: 'Montserrat Medium' !important;
+}
+
+
+p{
+    font-family: 'Source Sans Variable', sans-serif !important;
+    font-size: 17px;
+}
+
+.chapter_heading{
+     font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800; /* ExtraBold */
+    font-size: 40px !important;
+}
+
+.heading{
+     font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800; /* ExtraBold */
+    font-size: 35px !important;
+}
+
+.container {
+    perspective: 1500px;
+}
+
+
+.a4-container {
+    width: 210mm;
+    height: 297mm;
+background: radial-gradient(circle, 
+    #FFFFFF 20%, 
+    #FAD0D0 40%, 
+    #C8E6E8 60%, 
+    #D3C6E8 80%);
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    padding: 20mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 20px auto; /* Space between multiple containers */
+    transform-origin: center right;
+    transition: transform 1s ease-in-out;
+    backface-visibility: hidden;
+
+
+}
+
+.hidden {
+/*    display: none;*/
+}
+
+/* Auto-scale for smaller screens */
+@media (max-width: 1024px) {
+    .a4-container {
+        transform: scale(calc(100vw / 1024));
+        height: calc(100vh / (100vw / 1024));
+    }
+}
+
+        /* Wrapper for pages */
+        .pages-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between pages */
+        }
+
+       
+
+        .tech-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .lottie-container {
+            height: auto;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .a4-container {
+                width: 90vw;
+                height: 120vw;
+                padding: 5vw;
+            }
+            .tech-title {
+                font-size: 1.5rem;
+            }
+            .lottie-container {
+                max-width: 90px;
+            }
+        }
+
+        /* Print mode */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .pages-wrapper {
+                gap: 0; /* Remove space between printed pages */
+            }
+
+            .a4-container {
+                width: 100%;
+                height: 100%;
+                box-shadow: none;
+            }
+        }
+
+        #grass-2 {
+    width: 600px;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#character2 {
+        width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    margin: 0 auto;
+    z-index: 99999999999;
+}
+
+p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.play-btn {
+    position: fixed; /* Stays fixed on screen */
+    top: 70px; /* Moves to top */
+    left: 25%; /* Default position */
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+/* Adjust position for mobile devices */
+@media (min-width: 400px) {
+    .play-btn {
+        left: 25% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .play-btn {
+        left: 13% !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .play-btn {
+        left: 25% !important;
+    }
+}
+
+@media (min-width: 2500px) {
+    .play-btn {
+        left: 35% !important;
+    }
+}
+
+@media (min-width: 1366px) {
+    .play-btn {
+        left: 25% !important;
+    }
+}
+
+
+
+
+    </style>
+
+    <style>
+    .highlight {
+        background-color: yellow;
+    }
+    
+</style>
+
+</head>
+<body>
+
+    <div class="pages-wrapper">
+        <!-- First Page -->
+        <div style="perspective: 1000px;margin-left: 0px;margin-right: 0px;">
+        
+        <div class="a4-container page" id="page1">
+            <!-- Logo -->
+            <div id="logo" class="text-center">
+                <img src="00- Title Page/1-02.png" alt="Logo" style="width: 160px;">
+            </div>
+
+            <!-- Title -->
+            <h2 class="tech-title chapter_heading">THE STORY OF TECHNOLOGY</h2>
+
+            <!-- Technology Evolution Images -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-4">
+                        <div id="telephone" class="lottie-container" style="margin: 0 auto;width: 300px;"></div>
+                    </div>
+                    <div class="col-4">
+                        <div id="fire" class="lottie-container" style="margin: 0 auto; margin-top: 150px !important;width: 170px;"></div>                                        
+                    </div>
+                    <div class="col-4">
+                        <div id="drone" class="lottie-container" style="/* margin: 0 auto; */width: 300px;margin-left: -60px;"></div>                    
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrows & Character -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="character" class="lottie-container" style="width: 600px;position: relative;left: 40%;top: -6%;"></div>                  
+                    </div>
+                </div>            
+            </div>
+        </div>
+
+        <!-- Second Page -->
+        <div class="a4-container page hidden" id="page2">
+            <h2 class="tech-title heading">INTRODUCTION</h2>
+            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="character2-a" class="lottie-container" style="width: 25%;margin: 0 auto;"></div>                  
+                    </div>
+                    <div class="col-12">
+                            <p style="text-align: justify;font-size: 22px;">
+                                <strong>Today, we're going on a super fun adventure to learn all about technology.
+                                Sometimes, it's as simple as a twig we use to draw pictures in the sand. Other
+                                times, it turns into something awesome, like a computer that can show us
+                                anything we want to know. Technology is really about making things easier for us
+                                and solving problems. On this journey, we're going to see how technology has
+                                changed from the very first tools people made with their hands to the cool gadgets
+                                we love today. The most important thing about technology isn't just that it exists,
+                                but how we decide to use it. We can use technology in good ways or not-so-goop
+                                ways, so we need to think carefully when we use it. By exploring technology
+                                together, we'll learn just how big of a difference it makes in our lives and why the
+                                way we use it is what really counts.</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Technology Elements -->
+            <div class="d-flex justify-content-center"  id="" >
+                <div class="row">
+                    <div class="col-12">
+                       <div id="grass-2" class="lottie-container">
+                            <div id="character2" class="lottie-container"></div>                  
+                        </div>               
+                    </div>
+                </div>            
+            </div>
+        </div>
+
+
+        <div class="a4-container page hidden" id="page3">
+            <h2 class="tech-title heading">STUDENT LEARNING OUTCOMES</h2>
+            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-4">
+                          <div id="character3-1" class="lottie-container" style="margin: 0 auto;margin-top: 115px;width: 350px;"></div>   
+                    </div>
+                    <div class="col-8">
+                          <p style="position: relative;width: 26%;z-index: 99999;left: 7%;top: 15%;font-size: 12px;">Tracing the evolution of technology.</p>
+                          <p style="position: relative;width: 26%;z-index: 99999;left: 38%;top: -3%;font-size: 12px;">Discover how technology brings both opportunities and challenges.</p>
+                          <p style="position: relative;width: 26%;z-index: 99999;left: 69%;top: -19%;font-size: 12px;">Reflect on how society adapts to new technologies.</p>  
+                          <div id="sticky3-1" class="lottie-container" style="width: 100%;margin: 0 auto;position: relative;top: -56%;"></div>   
+                    </div>
+                    <div class="col-10" style="text-align: justify;padding: 45px;border: 15px solid;background-color: aliceblue;">
+
+                                <h1>WARM-UP</h1>
+                                <h5>LET'S START WITH A FUN QUESTION</h5>
+                                <p><strong>What comes to your mind when we say "technology"?</strong>
+                                You might think of video games, smart phones, or computers. But
+                                did you know technology started a long, long time ago, way before
+                                any of those things? People have been inventing stuff to help them
+                                for thousands of years! We'll watch a video "Technology:
+                                Transforming Lives from Stone Age to Digital Age" to see
+                                some of the first inventions people made.</p>
+
+                    </div>
+                    <div class="col-2">
+                          <div id="rocket3-1" class="lottie-container" style="width: 356%;position: relative;top: 0%;right: 100%;"></div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="a4-container page hidden" id="page4" style="text-align: left;">
+
+            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row" style="position: relative;top: -9%;">
+                    <div class="col-8">
+                        <h2 class="tech-title heading" style="text-align:left;position: relative;top: 36%;">CONCEPT<br>BUILDING</h2>
+                        <img src="05- Page 05/Plants-01.webp" style="width: 79%;position: relative;left: 5%;">
+                    </div>
+                    <div class="col-4">
+                          <div id="wheel4-1" class="lottie-container" style="position: relative;margin-top: 9%;width: 100%;margin: 0 auto;top: 22%;"></div>   
+                    </div>
+                    <div class="col-12">
+                        <h4 class="mt-4">
+                            <strong>THE BEGINNING OF INVENTIONS</strong>
+                        </h4>
+                    </div>
+
+                    <div class="col-12">
+                        <h4 style="text-align:left;">
+                            People have always been inventors, making things to make life
+                            better. Like the wheel to move things easier, fire to keep warm
+                            and cook food, and writing to keep track ofstories and important
+                            information.
+
+                        </h4>
+                    </div>
+                    <div class="col-9 mt-5">
+                        <h5 style="text-align:center;background-color: #056660;color: white;padding: 8px;border-radius: 30px;">
+                            Can you think of other old inventions?
+                        </h5>
+
+                        <h5 style="text-align:center;background-color: #056660;color: white;padding: 8px;border-radius: 30px;">
+                            How do you think they helped people?
+                        </h5>
+                    </div>
+                    <div class="col-3 mt-5">
+                         <div id="glass-2" class="lottie-container" style="width: 100%;margin: 0 auto;margin-top: -30px;"></div>   
+                    </div>
+
+                    <br>
+                    <div class="col-2">
+                        <div id="wheel4-2" class="lottie-container" style="width: 252%;/* margin: 0 auto; */margin-left: -93%;/* width: 100%; */"></div>   
+                    </div>  
+                    <div class="col-8">
+                         <h4 style="text-align:left;">
+                             <strong>UNDERSTANDING THE IMPACT OF NEW TECHNOLOGIES</strong>
+                         </h4>   
+                         <p style="text-align:justify;font-size: 20px;">
+                            Every time someone invents something new, it can
+                            make things better but also brings new challenges.
+                            For instance, the introduction of the printing press
+                            revolutionized access to information but also led to
+                            debates about information control and accuracy.
+                            New inventions can change the way we live, and we
+                            must figure out how to deal with that.
+                         </p>
+                    </div>
+
+                    <div class="col-2">
+
+                        <div id="printer-2" class="lottie-container" style="width: 200%;margin: 0 auto;margin-top: 250px;"></div>   
+                    </div>
+                </div>
+
+
+              
+            </div>
+        </div>
+
+
+        <div class="a4-container page hidden" id="page5">            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-12">
+                          <div id="flowers5-1" class="lottie-container" style="width: 5%;margin: 0 auto;"></div>   
+                    </div>
+                    <div class="col-8" style="text-align:left;">
+                        <h2 class="mb-5">
+                            THE DUAL NATURE OF TECHNOLOGY
+                        </h2>
+                        <h6 style="text-align:justify;font-size: 20px;">
+                            From the first fire to flying drones, inventions change
+                            our lives in big ways. But they also make us wonder,
+                            like how the wheel was great but made some people
+                            worry about getting lazy. The telegraph, which let
+                            messages travel fast, was exciting but made people
+                            concerned about forgetting how to write letters by
+                            hand.<br><br><br>
+                            The invention of the telephone made it easier for
+                            people to communicate over long distances, yet it also
+                            changed the dynamics of face-to-face interactions.
+                            Nowadays, we can talk to anyone around the world
+                            instantly because of digital technology, but we also
+                            think about how much time we spend looking at
+                            screens instead of playing outside.<br><br><br>
+                            These inventions make us think about how they affect
+                            our friendships, learning, and special moments. Every
+                            invention, even the ones we love, has its ups and
+                            downs. We'll talk about how these inventions changed
+                            how people connect, learn, and even how they spend
+                            their free time. We'll watch a video, "Echoes of
+                            Innovation: Connecting and Disconnecting
+                            Through Time" to understand this better.
+
+                        </h6>
+                    </div>
+
+                    <div class="col-4">
+                         <div id="lottie5-2" class="lottie-container" style="width: 100%;margin: 0 auto;"></div>   
+                             <div id="arrow5-1" class="lottie-container" style="width: 50%;margin: 0 auto;"></div> 
+                         <div id="lottie5-3" class="lottie-container" style="width: 50%;margin: 0 auto;"></div>   
+                             <div id="arrow5-2" class="lottie-container" style="width: 50%;margin: 0 auto;"></div> 
+                         <div id="lottie5-4" class="lottie-container" style="width: 100%;margin: 0 auto;"></div>   
+                    </div>
+                </div>
+
+
+              
+            </div>
+        </div>
+
+
+        <div class="a4-container page hidden" id="page6">            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-12">
+                         <div id="board-container" style="position: relative; width: 100%;">
+                            <img id="main_board" src="05- Page 05/page 6-05.png" style="width: 100%; display: block;">
+                            
+                            <img id="ch1" src="05- Page 05/page 6-03.png" 
+                                 style="width: 25%;position: absolute;top: 36%;left: 15%;">
+                            
+                            <img id="ch2" src="05- Page 05/page 6-04.png" 
+                                 style="width: 25%;position: absolute;top: 37%;left: 60%;">
+                        </div>
+
+                    </div>
+                    <div class="col-12" style="text-align:justify;margin-top: 20%;">
+                        <h1>LET'S GET CREATIVE</h1>
+                        <h5>
+                            Work in pairs or small groups and pick an invention to focus on. Think about how
+                            this invention helped people or caused some problems when it first came out.
+                            Write down your thoughts and ideas to share with everyone.
+                            Examples: Wheel, Writing, Printing Press, Postal System, Steam Engine, Car, Radio,
+                            Telephone, Television, Computer, Internet, Mobile Phone.
+                        </h5>
+                    </div>
+
+                    <div class="col-12" style="text-align:justify;">
+                        <h1>SHARING AND DISCUSSION</h1>
+                        <h5>
+                            Ask everyone to share what they found with the class, focusing on the different
+                            views about how technology affects us. Lead a thoughtful talk about how using
+                            technology can be complicated and what it means for people
+
+                        </h5>
+                    </div>
+
+                     <div class="col-6">
+                          <div id="book6-1" class="lottie-container" style="width: 50%;margin: 0 auto;"></div>   
+                    </div>
+
+                     <div class="col-6">
+                          <div id="book6-2" class="lottie-container" style="width: 50%;margin: 0 auto;"></div>   
+                    </div>
+
+                </div>
+
+              
+            </div>
+        </div>
+
+
+        <div class="a4-container page hidden" id="page7">            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center" style="top: -50%;margin-top: -50%;">
+                <div class="row">
+                    
+                    <div class="col-12 mb-4" style="text-align:justify;">
+                        <h1>KEY TAKEAWAY</h1>
+                        <h5 class="mt-3">
+                           Today, we learned that technology can be super helpful but also make us think
+                            hard about how we use it. We talked about how inventions from a long time ago
+                            are not so different from the ones we have today. By thinking about how
+                            technology affects our lives, we can make smarter choices about using it in fun
+                            and safe ways.
+
+                        </h5>
+                    </div>
+
+                    <div class="col-12">
+                            <div id="board-container-07" style="position: relative; width: 100%;">
+                                <img id="main_board_07" src="06- Page 06/page 7-03.png" 
+                                     style="width: 40%;display: block;margin: 0 auto;">
+
+                                <img id="ch1_07" src="06- Page 06/page 7-01.png" 
+                                     style="width: 25%;position: absolute;top: 25%;left: 15%;">
+
+                                <img id="ch2_07" src="06- Page 06/page 7-02.png" 
+                                     style="width: 35%;position: absolute;top: 24%;left: 60%;">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <script>
+        function loadLottie(id, path) {
+            lottie.loadAnimation({
+                container: document.getElementById(id),
+                renderer: "svg",
+                loop: true,
+                autoplay: true,
+                path: path,
+                rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid meet'
+                }
+            });
+        }
+
+        //loadLottie("logo", "00- Title Page/logo.json");
+        loadLottie("telephone", "00- Title Page/telephone downloaded.json");
+        loadLottie("drone", "00- Title Page/Drone downloaded.json");
+        loadLottie("fire", "00- Title Page/fire downloaded.json");
+        loadLottie("character", "00- Title Page/khudi.json");
+
+        /* Second Page Animations */
+        loadLottie("character2", "01- Page 01/kids with  magnifying glass.json");
+        loadLottie("character2-a", "01- Page 01/02- Paper Plane.json");
+        loadLottie("grass-2", "01- Page 01/grass.json");
+
+         /* third Page Animations */
+        loadLottie("character3-1", "02- Page 02/khudi on Pc.json");
+        loadLottie("sticky3-1", "02- Page 02/02- Sticky Notes.json");
+        loadLottie("rocket3-1", "02- Page 02/rocket downloaded.json");
+
+         /* fourth Page Animations */
+        loadLottie("wheel4-1", "03- Page 03/04- Wheel.json");
+        loadLottie("wheel4-2", "03- Page 03/01- Girl have an idea.json");
+        loadLottie("glass-2", "03- Page 03/glass.json");
+        loadLottie("printer-2", "03- Page 03/printer downloaded.json");
+        loadLottie("plants", "03- Page 03/plants.json");
+
+        /* fifth Page Animations */
+        loadLottie("flowers5-1", "04- Page 04/01- Arrow 1.json");
+        loadLottie("lottie5-2", "04- Page 04/Drone downloaded.json");
+        loadLottie("lottie5-3", "04- Page 04/fire downloaded.json");
+        loadLottie("lottie5-4", "04- Page 04/telephone downloaded.json");
+        loadLottie("arrow5-1", "04- Page 04/01- Arrow 1.json");
+        loadLottie("arrow5-2", "04- Page 04/02- Arrow 02.json");
+
+        /* sixth Page Animations */
+        loadLottie("window6-1", "05- Page 05/books 02 downloaded.json");
+        loadLottie("book6-1", "05- Page 05/book 01 downloaded.json");
+        loadLottie("book6-2", "05- Page 05/books 02 downloaded.json");
+
+        /* seventh Page Animations */
+        loadLottie("kids7-1", "06- Page 06/kids on door.json");
+        loadLottie("test-2", "lottie page2.json");
+    </script>
+<script>
+    let speechSynthesisUtterance;
+    let isSpeaking = false;
+    let selectedVoice = null;
+    let lastSpokenIndex = 0; // To track where speech stopped
+    let textToSpeak = ""; // Stores the text being read
+
+    function loadVoices() {
+        let voices = speechSynthesis.getVoices();
+        if (voices.length === 0) {
+            console.warn("Voices not loaded, retrying...");
+            setTimeout(loadVoices, 500);
+            return;
+        }
+
+        selectedVoice = voices.find(voice => voice.name.includes("Microsoft Clara Online (Natural) - English (Canada)")) || voices[0];
+
+        console.log("Voices Loaded:", voices.map(v => v.name));
+        console.log("Selected Voice:", selectedVoice?.name);
+    }
+
+    function speakText(text, startFrom = 0) {
+        if ('speechSynthesis' in window) {
+            speechSynthesis.cancel(); // Stop any existing speech
+
+            speechSynthesisUtterance = new SpeechSynthesisUtterance(text.substring(startFrom));
+            speechSynthesisUtterance.lang = 'en-US';
+            speechSynthesisUtterance.rate = 1;
+            speechSynthesisUtterance.pitch = 1;
+
+            if (selectedVoice) {
+                speechSynthesisUtterance.voice = selectedVoice;
+            }
+
+            speechSynthesisUtterance.onboundary = function (event) {
+                lastSpokenIndex = event.charIndex + startFrom;
+            };
+
+            speechSynthesisUtterance.onend = function () {
+                isSpeaking = false;
+                document.getElementById("play-btn").innerText = "🔊 Play";
+            };
+
+            speechSynthesis.speak(speechSynthesisUtterance);
+            document.getElementById("play-btn").innerText = "⏸️ Pause";
+            isSpeaking = true;
+        } else {
+            alert("Speech Synthesis not supported on your browser.");
+        }
+    }
+
+    document.getElementById("play-btn").addEventListener("click", function () {
+        if (isSpeaking) {
+            console.warn("Pausing Speech");
+            speechSynthesis.cancel();
+            this.innerText = "▶️ Resume";
+            isSpeaking = false;
+        } else {
+            if (lastSpokenIndex > 0) {
+                console.warn("Resuming Speech from", lastSpokenIndex);
+                speakText(textToSpeak, lastSpokenIndex);
+            } else {
+                textToSpeak = document.body.innerText;
+                speakText(textToSpeak);
+            }
+        }
+    });
+
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+    window.addEventListener("load", loadVoices);
+</script>
+<script>
+        let currentPage = 1;
+        const totalPages = 7;
+
+        document.getElementById("nextBtn").addEventListener("click", function () {
+            if (currentPage < totalPages) {
+                document.getElementById("page" + currentPage).classList.add("hidden");
+                currentPage++;
+                document.getElementById("page" + currentPage).classList.remove("hidden");
+            }
+            updateButtons();
+        });
+
+        document.getElementById("prevBtn").addEventListener("click", function () {
+            if (currentPage > 1) {
+                document.getElementById("page" + currentPage).classList.add("hidden");
+                currentPage--;
+                document.getElementById("page" + currentPage).classList.remove("hidden");
+            }
+            updateButtons();
+        });
+
+        function updateButtons() {
+            document.getElementById("prevBtn").disabled = (currentPage === 1);
+            document.getElementById("nextBtn").disabled = (currentPage === totalPages);
+        }
+    </script>
+
+</body>
+</html>

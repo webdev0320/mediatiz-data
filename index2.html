@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>The Story of Technology</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Variable:opsz,wght@8..72,400&display=swap" rel="stylesheet">
+    <style>
+        /* Black background for entire body */
+       html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+body {
+    display: block; /* Allow stacking */
+    overflow-x: auto;
+    all: unset;
+    font-family: 'Montserrat Medium' !important;
+}
+
+
+p{
+    font-family: 'Source Sans Variable', sans-serif !important;
+    font-size: 17px;
+}
+
+.chapter_heading{
+     font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800; /* ExtraBold */
+    font-size: 40px !important;
+}
+
+.heading{
+     font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800; /* ExtraBold */
+    font-size: 35px !important;
+}
+
+.container {
+    perspective: 1500px;
+}
+
+
+.a4-container {
+    width: 210mm;
+    height: 330mm;
+    background: radial-gradient(circle, 
+    #FFFFFF 20%, 
+    #FAD0D0 40%, 
+    #C8E6E8 60%, 
+    #D3C6E8 80%);
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    padding: 20mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 20px auto; /* Space between multiple containers */
+    transform-origin: center right;
+    transition: transform 1s ease-in-out;
+    backface-visibility: hidden;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: auto;
+
+}
+
+.hidden {
+    display: none;
+}
+
+/* Auto-scale for smaller screens */
+@media (max-width: 1024px) {
+    .a4-container {
+        transform: scale(calc(100vw / 1024));
+        height: calc(100vh / (100vw / 1024));
+    }
+}
+
+        /* Wrapper for pages */
+        .pages-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between pages */
+        }
+
+       
+
+        .tech-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .lottie-container {
+            height: auto;
+        }
+
+        /* Print mode */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .pages-wrapper {
+                gap: 0; /* Remove space between printed pages */
+            }
+
+            .a4-container {
+                width: 100%;
+                height: 100%;
+                box-shadow: none;
+            }
+        }
+
+      #grass-2 {
+    width: 779px;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#character2 {
+        width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    margin: 0 auto;
+    z-index: 99999999999;
+}
+
+p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.play-btn {
+    position: fixed; /* Stays fixed on screen */
+    top: 70px; /* Moves to top */
+    left: 25%; /* Default position */
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+/* Adjust position for mobile devices */
+@media (min-width: 400px) {
+    .play-btn {
+        left: 25% !important;
+    }
+
+    #grass-2{
+        width: 550px !important;
+    }
+
+    #intro_text{
+        font-size: 3.2vw !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .play-btn {
+        left: 13% !important;
+    }
+
+    #telephone{
+        width: 75% !important;
+        max-width: 75% !important;
+    }
+    #fire{
+        width: 75% !important;
+        max-width: 75% !important;
+    }
+
+    #drone{
+        width: 75% !important;
+        max-width: 75% !important;
+    }
+    #intro_text{
+        font-size: 2.5vw !important;
+    }
+
+    #student_learning_heading_1{
+        font-size: 4vw !important;
+    }
+    #student_learning_heading_2{
+        font-size: 3.5vw !important;
+    }
+    #student_learning_heading_3{
+        font-size: 2.2vw !important;
+    }
+    .concept_building_text_1{
+        font-size: 4vw !important;
+    }
+
+    #concept_building_text_2{
+        font-size: 3vw !important;        
+    }
+
+    #concept_building_text_3{
+         font-size: 3vw !important;       
+    }
+    #concept_building_text_4{
+         font-size: 3vw !important;       
+    }
+    #concept_building_text_5{
+         font-size: 3vw !important;               
+    }
+
+    #dual_text_1{
+         font-size: 5vw !important;               
+    }
+    .dual_text_2{
+         font-size: 3.5vw !important;                       
+    }
+    .dual_nature_lottie{
+        width: 150% !important;margin-left: -95px !important;
+    }
+    .dual_nature_lottie_fire{
+        width: 80% !important;margin-left: 0px !important;
+    }
+
+    .dual_nature_lottie_arrows{
+        width: 60% !important;margin-left: 0px !important;
+    }
+
+    .page_6_heading{
+        font-size: 5vw !important;
+    }
+    .page_6_desc{
+        font-size: 4vw !important;
+    }
+        #character{
+      max-width: 680px !important;
+        position: relative;
+        left: 30%;
+        top: -9%;
+    }
+
+    #board-container-07{
+        width: 90% !important;
+    }
+
+         #sticky3-1{
+        width: 153% !important;
+    }
+
+    #student_learning_text_1{
+        position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 41%;
+        top: 21%;
+        font-size: 2.6vw;
+    }
+    #student_learning_text_2{
+        position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 61%;
+        top: 21%;
+        font-size: 2vw;
+    }
+    #student_learning_text_3{
+     position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 82%;
+        top: 21%;
+        font-size: 2.2vw;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    #intro_text{
+        font-size: 2vw !important;
+    }
+
+    #character{
+      max-width: 680px !important;
+        position: relative;
+        left: 30%;
+        top: -11%;
+    }
+
+     #student_learning_heading_1{
+        font-size: 4vw !important;
+    }
+    #student_learning_heading_2{
+        font-size: 3.5vw !important;
+    }
+    #student_learning_heading_3{
+        font-size: 2vw !important;
+    }
+    .concept_building_text_1{
+        font-size: 3vw !important;
+    }
+    #concept_building_text_2{
+        font-size: 2.5vw !important;        
+    } 
+    #concept_building_text_3{
+         font-size: 2.5vw !important;       
+    }
+    #concept_building_text_4{
+         font-size: 2.5vw !important;       
+    }   
+    #concept_building_text_5{
+         font-size: 2.5vw !important;               
+    }
+
+    #dual_text_1{
+         font-size: 4vw !important;               
+    }
+    .dual_text_2{
+         font-size: 3vw !important;                       
+    }
+
+    .dual_nature_lottie{
+        width: 120% !important;margin-left: -95px !important;
+    }
+    .dual_nature_lottie_fire{
+        width: 50% !important;margin-left: 0px !important;
+    }
+
+    .dual_nature_lottie_arrows{
+        width: 40% !important;margin-left: 0px !important;
+    }
+
+    .page_6_heading{
+        font-size: 4vw !important;
+    }
+    .page_6_desc{
+        font-size: 3vw !important;
+    }
+    #board-container-07{
+        width: 90% !important;
+    }
+
+     #sticky3-1{
+        width: 130% !important;
+    }
+
+    #student_learning_text_1{
+        position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 39%;
+        top: 21%;
+        font-size: 2.5vw;
+    }
+    #student_learning_text_2{
+        position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 57%;
+        top: 20%;
+        font-size: 1.8vw;
+    
+    }
+    #student_learning_text_3{
+        position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 74%;
+        top: 20%;
+        font-size: 2vw;
+    }
+
+
+}
+
+@media (min-width: 1440px) {
+    .play-btn {
+        left: 25% !important;
+    }
+    #character{
+      max-width: 680px !important;
+        position: relative;
+        left: 30%;
+        top: -30%;
+    }
+
+    #telephone{
+        max-width: 75% !important;
+    }
+    #fire{
+        max-width: 75% !important;
+    }
+    #drone{
+        max-width: 75% !important;
+    }
+
+    #intro_text{
+        font-size: 2vw !important;
+    }
+
+      #student_learning_heading_1{
+        font-size: 3vw !important;
+    }
+    #student_learning_heading_2{
+        font-size: 2.5vw !important;
+    }
+    #student_learning_heading_3{
+        font-size: 1.5vw !important;
+    }
+
+     #rocket3-1{
+        width: 175% !important;top: 0%;right: 81%;margin-left: -380px;margin-top: -245px;
+    }
+
+     #sticky3-1{
+        width: 130% !important;
+    }
+
+      #student_learning_heading_0{
+        font-size: 3.5vw !important;
+    }
+
+    .concept_building_text_1{
+        font-size: 3vw !important;
+    }
+    #concept_building_text_2{
+        font-size: 2vw !important;        
+    } 
+    #concept_building_text_3{
+         font-size: 2vw !important;       
+    }
+    #concept_building_text_4{
+         font-size: 2vw !important;       
+    }
+    #concept_building_text_5{
+         font-size: 2vw !important;               
+    } 
+
+    #dual_text_1{
+         font-size: 3.5vw !important;               
+    }
+    .dual_text_2{
+         font-size: 2.2vw !important;                       
+    }
+
+     .dual_nature_lottie{
+        width: 100% !important;margin-left: -95px !important;
+    }
+    .dual_nature_lottie_fire{
+        width: 30% !important;margin-left: 0px !important;
+    }
+
+    .dual_nature_lottie_arrows{
+        width: 20% !important;margin-left: 0px !important;
+    }
+
+    .page_6_heading{
+        font-size: 3vw !important;
+    }
+    .page_6_desc{
+        font-size: 2vw !important;
+    }
+    #board-container-07{
+        width: 60% !important;
+    }
+
+    #student_learning_text_1{
+        position: absolute;width: 13%;z-index: 99999;left: 38%;top: 24%;font-size: 2vw;        
+    }
+    #student_learning_text_2{
+        position: absolute;width: 13%;z-index: 99999;left: 56%;top: 23%;font-size: 1.6vw;        
+    }
+    #student_learning_text_3{
+        position: absolute;width: 13%;z-index: 99999;left: 74%;top: 23%;font-size: 1.8vw;        
+    }
+
+}
+
+@media (min-width: 1900) {
+
+   .dual_text_2{
+        font-size: 2.2vw !important;        
+    }
+
+}
+
+@media (min-width: 2500px) {
+    .play-btn {
+        left: 35% !important;
+    }
+
+     #character{
+      max-width: 815px !important;
+        position: relative;
+        left: 30%;
+        top: -45%;
+    }
+
+    #telephone{
+        max-width: 75% !important;
+    }
+    #fire{
+        max-width: 60% !important;
+    }
+    #drone{
+        max-width: 75% !important;
+    }
+
+    #intro_text{
+        font-size: 1.5vw !important;
+    }
+
+    #sticky3-1{
+        width: 80% !important;
+    }
+    #character3-1{
+        width: 80% !important;        
+    }
+    #student_learning_heading_0{
+        font-size: 3vw !important;
+    }
+    #page3{
+        height: 530mm !important;
+    }
+
+     #page4{
+        height: 530mm !important;
+    }
+
+     #page5{
+        height: 530mm !important;
+    }
+
+     #page6{
+        height: 510mm !important;
+    }
+    #dual_text_1{
+        font-size: 3vw !important;
+    }
+
+    .dual_text_2{
+        font-size: 2vw !important;        
+    }
+
+    #rocket3-1{
+        width: 260%;top: 0%;right: 81%;margin-left: -380px;margin-top: -245px;
+    }
+
+    .dual_nature_lottie{
+        width: 80% !important;
+    }
+
+     #board-container-07{
+        width: 40% !important;
+    }
+
+
+       #sticky3-1{
+        width: 153% !important;
+    }
+
+    #student_learning_text_1{
+        position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 41%;
+        top: 25%;
+        font-size: 2.6vw;
+    }
+    #student_learning_text_2{
+        position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 61%;
+        top: 23%;
+        font-size: 2vw;
+    }
+    #student_learning_text_3{
+     position: absolute;
+        width: 13%;
+        z-index: 99999;
+        left: 82%;
+        top: 24%;
+        font-size: 2.2vw;
+    }
+
+
+}
+
+@media (min-width: 1366px) {
+    .play-btn {
+        left: 25% !important;
+    }
+}
+
+
+@media (max-width: 576px) {
+    h2.tech-title {
+        font-size: 8vw !important;
+    }
+
+    #character {
+       width: 90% !important;
+    }
+}
+
+
+
+
+    </style>
+
+    <style>
+    .highlight {
+        background-color: yellow;
+    }
+
+</style>
+
+<style>
+.book-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.book-page {
+  width: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+/*  transition: transform 0.8s ease, opacity 0.8s ease;*/
+  opacity: 1;
+  z-index: 0;
+/*  transform: rotateY(90deg) scale(0.95);*/
+}
+
+.book-page.active {
+  opacity: 1;
+  z-index: 1;
+/*  transform: rotateY(0deg) scale(1);*/
+}
+
+.book-page.flip-out {
+/*  transform: rotateY(-180deg);*/
+  opacity: 0;
+  z-index: 0;
+}
+
+.book-page.flip-in {
+/*  transform: rotateY(0deg);*/
+  opacity: 1;
+  z-index: 1;
+}
+
+.book-controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.book-controls button {
+  margin: 0 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: #002559;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+.slide-in-bck-tr {
+-webkit-animation: swing-out-top-bck 2s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+            animation: swing-out-top-bck 2s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2025-4-9 12:26:43
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation swing-out-top-bck
+ * ----------------------------------------
+ */
+@-webkit-keyframes swing-out-top-bck {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+}
+@keyframes swing-out-top-bck {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+}
+
+
+
+
+.slide-out-elliptic-top-bck {
+-webkit-animation: slide-out-elliptic-right-fwd 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: slide-out-elliptic-right-fwd 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2025-4-9 12:19:31
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-out-elliptic-right-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-out-elliptic-right-fwd {
+  0% {
+    -webkit-transform: translateX(0) rotateY(0) scale(1);
+            transform: translateX(0) rotateY(0) scale(1);
+    -webkit-transform-origin: 600px 50%;
+            transform-origin: 600px 50%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px) rotateY(20deg) scale(6);
+            transform: translateX(1000px) rotateY(20deg) scale(6);
+    -webkit-transform-origin: -100% 50%;
+            transform-origin: -100% 50%;
+    opacity: 0;
+  }
+}
+@keyframes slide-out-elliptic-right-fwd {
+  0% {
+    -webkit-transform: translateX(0) rotateY(0) scale(1);
+            transform: translateX(0) rotateY(0) scale(1);
+    -webkit-transform-origin: 600px 50%;
+            transform-origin: 600px 50%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px) rotateY(20deg) scale(6);
+            transform: translateX(1000px) rotateY(20deg) scale(6);
+    -webkit-transform-origin: -100% 50%;
+            transform-origin: -100% 50%;
+    opacity: 0;
+  }
+}
+
+
+
+
+#prevPage:hover{
+    opacity: 1 !important;
+}
+#nextPage:hover{
+    opacity: 1 !important;
+}
+
+#play-btn:hover{
+    opacity: 1 !important;
+}
+
+
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="pages-wrapper">
+        <!-- First Page -->
+          <!-- <div class="book-controls" style="position:fixed;top: 60%;z-index: 9999999;">
+            <button id="prevPage" style="position: relative;left: -42%;opacity: 0.2;">⟵</button>
+            <button id="nextPage" style="position: relative;left: 42%;opacity: 0.2;">⟶</button>
+          </div> -->
+        <div class="book-controls" style="position:fixed;top: 10%;z-index: 9999999;">
+                <button id="play-btn" style="position: relative;left: 42%;opacity: 0.2;"><i class="fa fa-play"></i></button>
+        </div>          
+
+        <div class="container book-container" style="width: 100%;margin-left: 0px;margin-right: 0px;padding-right: 0px;padding-left: 0px;max-width:fit-content;overflow-x: hidden;overflow-y: hidden;">
+       
+
+        <div class="book-page active">
+        <div class="container-fluid a4-container page" id="page1" >
+                <!-- Logo -->
+                <div id="logo" class="text-center mb-4">
+                    <img src="00- Title Page/1-02.png" alt="Logo" class="img-fluid" style="max-width: 41%;">
+                </div>
+
+                <!-- Title -->
+                <h2 class="tech-title chapter_heading text-center mb-5 "
+                    style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 5vw; line-height: 1;">
+                    <span class="read_text">THE STORY OF TECHNOLOGY.</span><br>
+                </h2>
+
+                <!-- Technology Evolution Images -->
+                  <div class="row justify-content-center text-center">
+                        <div class="col-2 col-lg-2 col-md-2 mb-4"></div>
+
+                        <div class="col-3 col-md-3 col-lg-3 mb-4">
+                            <div id="telephone" class="lottie-container mx-auto" style="max-width: 100%; width: 100%;"></div>
+                        </div>
+
+                        <div class="col-2 col-md-2 col-lg-2 mb-4">
+                            <div id="fire" class="lottie-container mx-auto" style="max-width: 100%; width: 100%; margin-top: 150px;"></div>
+                        </div>
+
+                        <div class="col-3 col-md-3 col-lg-3 mb-4">
+                            <div id="drone" class="lottie-container mx-auto" style="max-width: 100%; width: 100%;"></div>
+                        </div>
+
+                        <div class="col-2 col-lg-2 col-md-2 mb-4"></div>
+                         <div class="col-12">
+                            <div id="character" class="lottie-container mx-auto"
+                                 style="width: 80%; max-width: 600px;">
+                            </div>
+                        </div>
+                    </div>
+
+
+            </div>
+        </div>
+
+        <div class="book-page">
+        <!-- Second Page -->
+        <div class="a4-container page" id="page2">
+            <h2 class="tech-title heading read_text" style="font-size:4vw !important">INTRODUCTION.</h2>
+            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-12">
+                            <p id="intro_text" class="read_text" style="text-align: justify;font-size: 2vw;padding: 0% 5% 0% 5%;margin-top: 2%;margin-bottom: 2%;">
+                                <strong>Today, we're going on a super fun adventure to learn all about technology.
+                                Sometimes, it's as simple as a twig we use to draw pictures in the sand. Other
+                                times, it turns into something awesome, like a computer that can show us
+                                anything we want to know. Technology is really about making things easier for us
+                                and solving problems. On this journey, we're going to see how technology has
+                                changed from the very first tools people made with their hands to the cool gadgets
+                                we love today. The most important thing about technology isn't just that it exists,
+                                but how we decide to use it. We can use technology in good ways or not-so-goop
+                                ways, so we need to think carefully when we use it. By exploring technology
+                                together, we'll learn just how big of a difference it makes in our lives and why the
+                                way we use it is what really counts.</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Technology Elements -->
+            <div class="d-flex justify-content-center"  id="" >
+                <div class="row">
+                    <div class="col-12">
+                       <div id="grass-2" class="lottie-container" style="width:670px !important">
+                            <div id="character2" class="lottie-container"></div>                  
+                        </div>               
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+
+        <div class="book-page">
+        <div class="a4-container page" id="page3">
+            <h2 class="tech-title heading read_text" id="student_learning_heading_0" style="font-size:4vw">STUDENT LEARNING OUTCOMES.</h2>
+            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center" style="display: block !important;">
+                <div class="row">
+                    <div class="col-4">
+                          <div id="character3-1" class="lottie-container" style="margin: 0 auto;margin-top: 185px;width: 500px;"></div>   
+                    </div>
+                    <div class="col-8" style="height: 420px;">  
+                          <div class="col-8">
+                          <p class="read_text" id="student_learning_text_1">Tracing the evolution of technology.</p>
+                          <p class="read_text" id="student_learning_text_2">Discover how technology brings both opportunities and challenges.</p>
+                          <p class="read_text" id="student_learning_text_3">Reflect on how society adapts to new technologies.</p>  
+                              <div id="sticky3-1" class="lottie-container" style="width: 100%;margin: 0 auto;position: relative;top: -56%;"></div>   
+                        </div>
+                          <div id="sticky3-1" class="lottie-container" style="width: 100%;margin: 0 auto;"></div>   
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5%;">
+                    <div class="col-10" >
+                            <div style="text-align: justify;padding: 45px;border: 15px solid;background-color: aliceblue;width: 90%;margin-left: 5%;">
+                                <h1 class="read_text" id="student_learning_heading_1" style="font-size: 3vw;">WARM-UP.</h1>
+                                <h5 class="read_text" id="student_learning_heading_2" style="font-size: 2.5vw;text-align: left !important;">LET'S START WITH A FUN QUESTION.</h5>
+                                <p class="read_text" id="student_learning_heading_3" style="font-size: 2vw;"><strong>What comes to your mind when we say "technology"?</strong>
+                                You might think of video games, smart phones, or computers. But
+                                did you know technology started a long, long time ago, way before
+                                any of those things? People have been inventing stuff to help them
+                                for thousands of years! We'll watch a video "Technology:
+                                Transforming Lives from Stone Age to Digital Age" to see
+                                some of the first inventions people made.</p>
+                            </div>
+
+                    </div>
+                    <div class="col-2">
+                          <div id="rocket3-1" class="lottie-container" style="width: 260%;0%; */left: -49px;/* position: relative; */top: 0%;right: 81%;margin-left: -180px;margin-top: -75px;"></div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="book-page">
+        <div class="a4-container page" id="page4" style="text-align: left;height: 400mm;">
+
+            <h2 class="tech-title heading read_text" style="font-size:4vw !important">CONCEPT BUILDING.</h2>
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row" style="">
+                    <div class="col-6" style="background-image: url('05- Page 05/Plants-01.webp');background-size: contain;background-repeat: no-repeat;">
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-4">
+                          <div id="wheel4-1" class="lottie-container" style="position: static;margin-top: 9%;width: 65%;margin: 0 auto;top: 50%;"></div>   
+                    </div>
+                    <div class="col-12">
+                        <h4 class="mt-4 concept_building_text_1" id="concept_building_text_1" style="padding-left: 20px;font-size: 3vw;">
+                            <strong class="read_text">THE BEGINNING OF INVENTIONS.</strong>
+                        </h4>
+                    </div>
+
+                    <div class="col-12">
+                        <h4 class="read_text" id="concept_building_text_2" style="text-align:left;padding-left: 20px;font-size: 2.5vw;">
+                            People have always been inventors, making things to make life
+                            better. Like the wheel to move things easier, fire to keep warm
+                            and cook food, and writing to keep track ofstories and important
+                            information.
+
+                        </h4>
+                    </div>
+                    <div class="col-9 mt-5" style="padding: 10px 50px 26px 50px;">
+                        <h5  id="concept_building_text_3" class="read_text" style="text-align:center;background-color: #056660;color: white;padding: 8px;border-radius: 30px;font-size: 2vw;">
+                            Can you think of other old inventions?
+                        </h5>
+
+                        <h5  id="concept_building_text_4" class="read_text" style="text-align:center;background-color: #056660;color: white;padding: 8px;border-radius: 30px;font-size: 2vw;">
+                            How do you think they helped people?
+                        </h5>
+                    </div>
+                    <div class="col-3 mt-5">
+                         <div id="glass-2" class="lottie-container" style="width: 36%;margin: 0 auto;margin-top: -55px;"></div>   
+                    </div>
+
+                    <br>
+                    <div class="col-3">
+                        <div id="wheel4-2" class="lottie-container" style="width: 100%;/* margin: 0 auto; */margin-left: 0%;/* width: 100%; */"></div>   
+                    </div>  
+                    <div class="col-7">
+                         <h4 class="concept_building_text_1" style="text-align:left;font-size: 2.5vw;">
+                             <strong class="read_text">UNDERSTANDING THE IMPACT OF NEW TECHNOLOGIES.</strong>
+                         </h4>   
+                         <p id="concept_building_text_5" class="read_text" style="text-align:justify;font-size: 2vw;">
+                            Every time someone invents something new, it can
+                            make things better but also brings new challenges.
+                            For instance, the introduction of the printing press
+                            revolutionized access to information but also led to
+                            debates about information control and accuracy.
+                            New inventions can change the way we live, and we
+                            must figure out how to deal with that.
+                         </p>
+                    </div>
+
+                    <div class="col-2">
+
+                        <div id="printer-2" class="lottie-container" style="width: 100%;margin: 0 auto;margin-top: 0px;"></div>   
+                    </div>
+                </div>
+
+
+              
+            </div>
+        </div>
+    </div>
+
+        <div class="book-page">
+        <div class="a4-container page" id="page5" style="height: 450mm;">            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-8" style="text-align:left;padding: 5%;">
+                        <h2 id="dual_text_1" class="mb-5 read_text" style="font-size: 3vw;"> 
+                            THE DUAL NATURE OF TECHNOLOGY.
+                        </h2>
+                        <h6 class="dual_text_2 read_text" style="text-align:justify;font-size: 2.2vw">
+                            From the first fire to flying drones, inventions change
+                            our lives in big ways. But they also make us wonder,
+                            like how the wheel was great but made some people
+                            worry about getting lazy. The telegraph, which let
+                            messages travel fast, was exciting but made people
+                            concerned about forgetting how to write letters by
+                            hand.<br><br>
+                            The invention of the telephone made it easier for
+                            people to communicate over long distances, yet it also
+                            changed the dynamics of face-to-face interactions.
+                            Nowadays, we can talk to anyone around the world
+                            instantly because of digital technology, but we also
+                            think about how much time we spend looking at
+                            screens instead of playing outside.<br><br>
+                            These inventions make us think about how they affect
+                            our friendships, learning, and special moments. Every
+                            invention, even the ones we love, has its ups and
+                            downs. We'll talk about how these inventions changed
+                            how people connect, learn, and even how they spend
+                            their free time. We'll watch a video, "Echoes of
+                            Innovation: Connecting and Disconnecting
+                            Through Time" to understand this better.
+
+                        </h6>
+                    </div>
+
+                    <div class="col-4">
+                         <div id="lottie5-2" class="lottie-container dual_nature_lottie" style="width: 90%;margin: 0 auto;"></div>   
+                             <div id="arrow5-1" class="lottie-container dual_nature_lottie_arrows" style="width: 20%;margin: 0 auto;"></div> 
+                         <div id="lottie5-3" class="lottie-container dual_nature_lottie_fire" style="width: 30%;margin: 0 auto;"></div>   
+                             <div id="arrow5-2" class="lottie-container dual_nature_lottie_arrows" style="width: 20%;margin: 0 auto;"></div> 
+                         <div id="lottie5-4" class="lottie-container dual_nature_lottie" style="width: 75%;margin: 0 auto;"></div>   
+                    </div>
+                </div>
+
+
+              
+            </div>
+        </div>
+    </div>
+
+        <div class="book-page">
+        <div class="a4-container page" id="page6" style="height: 370mm;">            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-8 offset-3">
+                         <div id="board-container" style="position: relative; width: 70%;">
+                            <img id="main_board" src="05- Page 05/page 6-05.png" style="width: 100%; display: block;">
+                            
+                            <img id="ch1" src="05- Page 05/page 6-03.png" 
+                                 style="width: 25%;position: absolute;top: 36%;left: 15%;">
+                            
+                            <img id="ch2" src="05- Page 05/page 6-04.png" 
+                                 style="width: 25%;position: absolute;top: 37%;left: 60%;">
+                        </div>
+
+                    </div>
+                    <div class="col-12" style="text-align:justify;margin-top: 8%;padding: 0% 5% 0% 5%;">
+                        <h1 class="page_6_heading read_text">LET'S GET CREATIVE.</h1>
+                        <h5 class="page_6_desc read_text" style="font-size:2vw">
+                            Work in pairs or small groups and pick an invention to focus on. Think about how
+                            this invention helped people or caused some problems when it first came out.
+                            Write down your thoughts and ideas to share with everyone.
+                            Examples: Wheel, Writing, Printing Press, Postal System, Steam Engine, Car, Radio,
+                            Telephone, Television, Computer, Internet, Mobile Phone.
+                        </h5>
+                    </div>
+
+                    <div class="col-12" style="text-align:justify;margin-top: 1%;padding: 0% 5% 0% 5%;">
+                        <h1 class="page_6_heading read_text">SHARING AND DISCUSSION.</h1>
+                        <h5 class="page_6_desc read_text" style="font-size:2vw">
+                            Ask everyone to share what they found with the class, focusing on the different
+                            views about how technology affects us. Lead a thoughtful talk about how using
+                            technology can be complicated and what it means for people.
+
+                        </h5>
+                    </div>
+
+                     <div class="col-6">
+                          <div id="book6-1" class="lottie-container" style="width: 25%;margin: 0 auto;"></div>   
+                    </div>
+
+                     <div class="col-6">
+                          <div id="book6-2" class="lottie-container" style="width: 25%;margin: 0 auto;"></div>   
+                    </div>
+
+                </div>
+
+              
+            </div>
+        </div>
+    </div>
+
+        <div class="book-page">
+        <div class="a4-container page" id="page7" style="height: 420mm;">            
+            <!-- New Lottie Animations for Second Page -->
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    
+                    <div class="col-12 mb-4" style="text-align:justify;padding: 5%;">
+                        <h1 style="font-size:3vw" class="page_6_heading read_text">KEY TAKEAWAY.</h1>
+                        <h5 style="font-size:3vw" class="mt-3 page_6_desc read_text">
+                           Today, we learned that technology can be super helpful but also make us think
+                            hard about how we use it. We talked about how inventions from a long time ago
+                            are not so different from the ones we have today. By thinking about how
+                            technology affects our lives, we can make smarter choices about using it in fun
+                            and safe ways.
+                        </h5>
+                    </div>
+
+                    <div class="col-12" style="display: flex;justify-content: center;">
+                            <div id="board-container-07" style="position: relative; width: 60%;">
+                                <img id="main_board_07" src="06- Page 06/page 7-03.png" 
+                                     style="width: 40%;display: block;margin: 0 auto;">
+
+                                <img id="ch1_07" src="06- Page 06/page 7-01.png" 
+                                     style="width: 25%;position: absolute;top: 25%;left: 15%;">
+
+                                <img id="ch2_07" src="06- Page 06/page 7-02.png" 
+                                     style="width: 35%;position: absolute;top: 24%;left: 60%;">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     
+    </div>
+
+
+    </div>
+
+    <script>
+        function loadLottie(id, path) {
+            lottie.loadAnimation({
+                container: document.getElementById(id),
+                renderer: "svg",
+                loop: true,
+                autoplay: true,
+                path: path,
+                rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid meet'
+                }
+            });
+        }
+
+        //loadLottie("logo", "00- Title Page/logo.json");
+        loadLottie("telephone", "00- Title Page/telephone downloaded.json");
+        loadLottie("drone", "00- Title Page/Drone downloaded.json");
+        loadLottie("fire", "00- Title Page/fire downloaded.json");
+        loadLottie("character", "00- Title Page/khudi.json");
+
+        /* Second Page Animations */
+        loadLottie("character2", "01- Page 01/kids with  magnifying glass.json");
+        loadLottie("character2-a", "01- Page 01/02- Paper Plane.json");
+        loadLottie("grass-2", "01- Page 01/grass.json");
+
+         /* third Page Animations */
+        loadLottie("character3-1", "02- Page 02/khudi on Pc.json");
+        loadLottie("sticky3-1", "02- Page 02/02- Sticky Notes.json");
+        loadLottie("rocket3-1", "02- Page 02/rocket downloaded.json");
+
+         /* fourth Page Animations */
+        loadLottie("wheel4-1", "03- Page 03/04- Wheel.json");
+        loadLottie("wheel4-2", "03- Page 03/01- Girl have an idea.json");
+        loadLottie("glass-2", "03- Page 03/glass.json");
+        loadLottie("printer-2", "03- Page 03/printer downloaded.json");
+        loadLottie("plants", "03- Page 03/plants.json");
+
+        /* fifth Page Animations */
+        loadLottie("flowers5-1", "04- Page 04/01- Arrow 1.json");
+        loadLottie("lottie5-2", "04- Page 04/Drone downloaded.json");
+        loadLottie("lottie5-3", "04- Page 04/fire downloaded.json");
+        loadLottie("lottie5-4", "04- Page 04/telephone downloaded.json");
+        loadLottie("arrow5-1", "04- Page 04/01- Arrow 1.json");
+        loadLottie("arrow5-2", "04- Page 04/02- Arrow 02.json");
+
+        /* sixth Page Animations */
+        loadLottie("window6-1", "05- Page 05/books 02 downloaded.json");
+        loadLottie("book6-1", "05- Page 05/book 01 downloaded.json");
+        loadLottie("book6-2", "05- Page 05/books 02 downloaded.json");
+
+        /* seventh Page Animations */
+        loadLottie("kids7-1", "06- Page 06/kids on door.json");
+        loadLottie("test-2", "lottie page2.json");
+    </script>
+<style>
+    .highlight {
+        background-color: yellow;
+    }
+</style>
+<script>
+        let speechSynthesisUtterance;
+        let isSpeaking = false;
+        let selectedVoice = null;
+        let lastSpokenIndex = 0;
+        let wordsList = [];
+        let wordElements = [];
+        let textToSpeak = "";
+
+        function loadVoices() {
+            let voices = speechSynthesis.getVoices();
+            if (voices.length === 0) {
+                setTimeout(loadVoices, 500);
+                return;
+            }
+            selectedVoice = voices.find(voice => voice.name.includes("Microsoft Clara Online (Natural) - English (Canada)")) || voices[0];
+        }
+
+        function prepareTextForSpeech() {
+            const readTextElements = document.querySelectorAll(".read_text");
+            wordElements = [];
+            wordsList = [];
+
+            readTextElements.forEach(el => {
+                const text = el.innerText.trim();
+                const words = text.split(/\s+/);
+
+                el.innerHTML = words.map(word => {
+                    wordsList.push(word);
+                    return `<span class="word">${word} </span>`; // Ensures space between words
+                }).join("");
+
+                wordElements.push(...el.querySelectorAll(".word"));
+            });
+
+            textToSpeak = wordsList.join(" ");
+        }
+
+        function highlightCurrentWord(index) {
+            wordElements.forEach(el => el.classList.remove("highlight"));
+            if (wordElements[index]) {
+                wordElements[index].classList.add("highlight");
+                wordElements[index].scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }
+
+        function speakText(startFromIndex = 0) {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+
+                const text = wordsList.slice(startFromIndex).join(" ");
+                speechSynthesisUtterance = new SpeechSynthesisUtterance(text);
+                speechSynthesisUtterance.lang = 'en-US';
+                speechSynthesisUtterance.rate = 1;
+                speechSynthesisUtterance.pitch = 1;
+
+                if (selectedVoice) {
+                    speechSynthesisUtterance.voice = selectedVoice;
+                }
+
+                speechSynthesisUtterance.onboundary = function (event) {
+                    if (event.name === 'word') {
+                        const currentChar = event.charIndex;
+                        const spokenUpTo = text.substring(0, currentChar);
+                        const index = spokenUpTo.trim().split(/\s+/).length - 1 + startFromIndex;
+                        highlightCurrentWord(index);
+                        lastSpokenIndex = index + 1;
+                    }
+                };
+
+                speechSynthesisUtterance.onend = function () {
+                    isSpeaking = false;
+                    document.getElementById("play-btn").innerText = "🔊 Play";
+                };
+
+                speechSynthesis.speak(speechSynthesisUtterance);
+                document.getElementById("play-btn").innerText = "⏸️ Pause";
+                isSpeaking = true;
+            } else {
+                alert("Speech Synthesis not supported on your browser.");
+            }
+        }
+
+        document.getElementById("play-btn").addEventListener("click", function () {
+            if (isSpeaking) {
+                speechSynthesis.cancel();
+                this.innerText = "▶️ Resume";
+                isSpeaking = false;
+            } else {
+                if (lastSpokenIndex > 0 && lastSpokenIndex < wordsList.length) {
+                    speakText(lastSpokenIndex);
+                } else {
+                    prepareTextForSpeech();
+                    speakText(0);
+                }
+            }
+        });
+
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+        window.addEventListener("load", loadVoices);
+    </script>
+<script>
+    let currentPage = 0;
+const pages = document.querySelectorAll('.book-page');
+
+
+document.getElementById('nextPage').addEventListener('click', () => { 
+  if (currentPage < pages.length - 1) {
+    const current = pages[currentPage];
+
+    // Add exit animation class
+    current.classList.add('slide-out-elliptic-top-bck');
+    current.classList.remove('active');
+
+    // Wait for the animation to complete
+    setTimeout(() => {
+      current.classList.add('hidden');
+      current.classList.remove('slide-out-elliptic-top-bck');
+    }, 1000); // Match this with the 1s duration of slide-out-elliptic-top-bck
+
+    currentPage++;
+
+    const next = pages[currentPage];
+    next.classList.remove('hidden');
+    next.classList.add('active');
+    next.classList.add('slide-in-bck-tr');
+
+    setTimeout(() => {
+      next.classList.remove('slide-in-bck-tr');
+    }, 600); // Match this with the 0.6s duration of slide-in-bck-tr
+  }
+});
+
+document.getElementById('prevPage').addEventListener('click', () => {
+  if (currentPage > 0) {
+    const current = pages[currentPage];
+
+    // Add exit animation class
+    current.classList.add('slide-out-elliptic-top-bck');
+    current.classList.remove('active');
+
+    // Wait for the animation to complete
+    setTimeout(() => {
+      current.classList.add('hidden');
+      current.classList.remove('slide-out-elliptic-top-bck');
+    }, 1000); // Match this with the 1s duration of slide-out-elliptic-top-bck
+
+    currentPage--;
+
+    const previous = pages[currentPage];
+
+    // Add animation class to the previous page but keep it hidden initially
+    //previous.classList.add('slide-in-bck-tr');
+    
+
+    // Wait for the animation to start
+    setTimeout(() => {
+      previous.classList.add('active');
+    }, 50); // Small delay to ensure the animation is triggered before it becomes active
+
+    // Remove the animation class after the animation completes
+    setTimeout(() => {
+      previous.classList.remove('slide-in-bck-tr');
+    }, 600); // Match this with the 0.6s duration of slide-in-bck-tr
+    previous.classList.remove('hidden'); // Make it visible after applying animation    
+  }
+});
+
+
+
+
+</script>
+</body>
+</html>
